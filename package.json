@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Transform NDJSON to an HTML table.",
   "main": "index.js",
+  "bin": {
+    "ndjson2table": "./cli.js"
+  },
   "scripts": {
     "test": "node test.js"
   },
@@ -10,7 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "data-table": "^2.0.0",
-    "duplexer": "^0.1.1"
+    "duplexer": "^0.1.1",
+    "ndjson": "^1.2.3"
   },
   "devDependencies": {},
   "repository": {

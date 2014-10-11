@@ -13,10 +13,13 @@ module.exports = function () {
     if(first) {
       first = false
       table = createTable(keys)
-      table.pipe(output)
+      table.pipe(output)  
     }
     table.write(obj)
     cb()
   }
+  input.on('finish', function () {
+    table.end()
+  })
   return duplexer(input, output)
 }
