@@ -19,7 +19,12 @@ module.exports = function () {
     cb()
   }
   input.on('finish', function () {
-    table.end()
+    if(table) table.end()
+    else {
+      table = createTable(['[empty]'])
+      table.write({empty: ''})
+      table.pipe(output)
+    }
   })
   return duplexer(input, output)
 }

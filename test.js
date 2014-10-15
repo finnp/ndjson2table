@@ -11,3 +11,4 @@ stream.write({a: 2, b:4})
 stream.write({a: 4, b:5})
 stream.write({b: 4, a:5})
 stream.end()
+
